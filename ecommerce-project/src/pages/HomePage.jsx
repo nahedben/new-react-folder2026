@@ -1,4 +1,4 @@
-import './Header.css';
+import './HeaderPage.css';
 import './HomePage.css';
 export function HomePage() {
   
