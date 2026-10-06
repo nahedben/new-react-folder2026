@@ -6,7 +6,7 @@ export function HomePage() {
   return (
     <>
     <title>Home Page</title>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="home-favicon.png" />
     <Header />
 
     <div className="home-page">
