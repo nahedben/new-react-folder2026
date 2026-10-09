@@ -1,21 +1,31 @@
 import Header from '../components/Header';
+import {useEffect, useState} from 'react';
 import {products} from '../../starting-work/data/products.js';
 import './HomePage.css';
 import axios from 'axios';
 export function HomePage() {
+const [products,setProducts]= useState([])
+const [cartItems,setCartItems]=useState([])
+
   // fetch('http://localhost:3000/api/products/')
   //     .then(response => {return response.json()})
   //     .then(data=>{console.log(data)})
 
- axios.get('http://localhost:3000/api/products/').then((response) => {
-  console.log(response.data);
-})
+  useEffect(()=>{
+ axios.get('/api/products/').then((response) => {
+ setProducts(response.data)
+ })
+ axios.get('http://localhost:3000/api/cart-items/')
+ .then((response)=>{setCartItems(response.data)
+}
+      )
+},[])
 
   return (
     <>
     <title>Home Page</title>
     <link rel="icon" type="image/svg+xml" href="home-favicon.png" />
-    <Header />
+    <Header cartItems={cartItems} />
 
     <div className="home-page">
       <div className="products-grid">
