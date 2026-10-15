@@ -7,7 +7,7 @@ import { priceFormat } from '../../utils/money.js'
 export function CheckoutPage({ cartItems }) {
   const [deliveryOptions, setDeliveryOptions] = useState([])
   const [paymentSummary, setPaymentSummary] = useState(null)
-
+console.log("from checkout", cartItems)
   useEffect(() => {
     axios
       .get('api/delivery-options?expand=estimatedDeliveryTime')
@@ -20,7 +20,7 @@ export function CheckoutPage({ cartItems }) {
     })
   }, [])
 
-cartItems.forEach((item) => {console.log(item)})
+// cartItems.forEach((item) => {console.log(item)})
   return (
     <>
       <title>Checkout</title>

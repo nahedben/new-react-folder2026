@@ -8,7 +8,7 @@ import { priceFormat } from '../utils/money.js';
 export function HomePage({cartItems}) {
 const [products,setProducts]= useState([])
 
-
+// console.log("HomePage", cartItems)
   // fetch('http://localhost:3000/api/products/')
   //     .then(response => {return response.json()})
   //     .then(data=>{console.log(data)})
@@ -19,6 +19,7 @@ const [products,setProducts]= useState([])
  })
  
 },[])
+// console.log("HERER IS",cartItems)
 
   return (
     <>

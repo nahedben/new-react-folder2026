@@ -140,7 +140,8 @@
   width: 140px;
   height: 36px;
   border-radius: 5px;
-
+  background-color: rgb(10, 97, 55);
+  color:aliceblue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,6 +160,9 @@
   width: 100%;
   font-size: 14px;
   padding: 8px;
+  background-color:transparent;
+  border-color: rgb(78, 78, 78);
+  border-radius: 5px;
 }
 
 @media (max-width: 800px) {
