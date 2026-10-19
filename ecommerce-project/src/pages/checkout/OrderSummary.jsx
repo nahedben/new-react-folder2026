@@ -1,7 +1,5 @@
-
-import dayjs from "dayjs"
-import { priceFormat } from "../../utils/money"
-import DeliveryOptions from "./DeliveryOptions"
+import CartItemDetails from "./CartItemDetails"
+import DeliveryDate from "./DeliveryDate"
 export default function OrderSummary({deliveryOptions , cartItems}){
 
 
@@ -14,33 +12,11 @@ export default function OrderSummary({deliveryOptions , cartItems}){
                 return (
                
                 <div key={item.productId} className="cart-item-container">
-                  <div className="delivery-date">Delivery date:{dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd, MMMM D')}</div>
+                 <DeliveryDate selectedDeliveryOption={selectedDeliveryOption}/>
               
-                  <div className="cart-item-details-grid">
-                    <img className="product-image" src={item.product.image} />
-  
-                    <div className="cart-item-details">
-                      <div className="product-name">{item.product.name}</div>
-                      <div className="product-price">
-                        {priceFormat(item.product.priceCents)}
-                      </div>
-                      <div className="product-quantity">
-                        <span>
-                          Quantity:{' '}
-                          <span className="quantity-label">{item.quantity}</span>
-                        </span>
-                        <span className="update-quantity-link link-primary">
-                          Update
-                        </span>
-                        <span className="delete-quantity-link link-primary">
-                          Delete
-                        </span>
-                      </div>
-                    </div>
-  
-                    <DeliveryOptions deliveryOptions={deliveryOptions} item={item}/>
-                  </div>
-                </div>)
+                  <CartItemDetails item={item} deliveryOptions={deliveryOptions}/>
+                </div>
+                )
   })}
             </div></>)
 }
