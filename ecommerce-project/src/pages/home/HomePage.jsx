@@ -8,9 +8,14 @@ export function HomePage({cartItems}) {
 const [products,setProducts]= useState([])
 
   useEffect(()=>{
- axios.get('/api/products/').then((response) => {
- setProducts(response.data)
- })
+const getData= async()=>{
+
+  const response = await axios.get('/api/products/')
+  setProducts(response.data)
+
+} 
+getData()
+
  
 },[])
 // console.log("HERER IS",cartItems)
