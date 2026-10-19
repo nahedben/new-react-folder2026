@@ -1,34 +1,13 @@
-import Header from '../components/Header';
-import {useEffect, useState} from 'react';
-import {products} from '../../starting-work/data/products.js';
-import './HomePage.css';
-import axios from 'axios';
-import { priceFormat } from '../utils/money.js';
+import dayjs from 'dayjs';
+import { priceFormat } from '../../utils/money';
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-export function HomePage({cartItems}) {
-const [products,setProducts]= useState([])
+export default function ProductsGrid({products}){
 
-// console.log("HomePage", cartItems)
-  // fetch('http://localhost:3000/api/products/')
-  //     .then(response => {return response.json()})
-  //     .then(data=>{console.log(data)})
 
-  useEffect(()=>{
- axios.get('/api/products/').then((response) => {
- setProducts(response.data)
- })
- 
-},[])
-// console.log("HERER IS",cartItems)
-
-  return (
-    <>
-    <title>Home Page</title>
-    <link rel="icon" type="image/svg+xml" href="home-favicon.png" />
-    <Header cartItems={cartItems} />
-
-    <div className="home-page">
-      <div className="products-grid">
+  return(<>
+    <div className="products-grid">
 {products.map((product) => (
   <div key ={product.id} className="product-container">
           <div className="product-image-container">
@@ -82,7 +61,5 @@ const [products,setProducts]= useState([])
 
         
       </div>
-    </div>
-    </>
-  );
+    </>)
 }

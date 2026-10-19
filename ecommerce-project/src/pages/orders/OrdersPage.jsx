@@ -1,11 +1,12 @@
 import axios from 'axios'
 import './OrdersPage.css'
-import './HomePage.css'
-import Header from '../components/Header';
+import '../home/HomePage.css'
+import Header from '../../components/Header';
 import { Link } from 'react-router-dom';
 import { useEffect, useState,Fragment } from 'react';
-import { priceFormat } from '../utils/money';
+import { priceFormat } from '../../utils/money';
 import dayjs from 'dayjs';
+
 
 export function OrdersPage({cartItems}) {
 const [orders,setOrders]=useState([])
@@ -15,7 +16,7 @@ useEffect(()=>{
     setOrders(response.data)
   })
 },[])
-orders.map((e)=>{e.products.map(prd => console.log(prd))})
+
   return (
     <>
    <Header cartItems={cartItems}/>
@@ -48,7 +49,7 @@ orders.map((e)=>{e.products.map(prd => console.log(prd))})
             </div>
           </div>
 
-          <div className="order-details-grid">
+         <div className="order-details-grid">
             {order.products.map((orderPrd)=>
             <Fragment key={orderPrd.id}> <div className="product-image-container">
               
@@ -77,7 +78,9 @@ orders.map((e)=>{e.products.map(prd => console.log(prd))})
                   Track package
                 </button>
               </Link  >
-            </div></Fragment>)}
+            </div>
+            
+            </Fragment>)}
            
 
 
