@@ -9,16 +9,22 @@ import OrdersGrid from './OrdersGrid';
 
 
 export function OrdersPage({cartItems}) {
+
 const [orders,setOrders]=useState([])
+ 
 useEffect(()=>{
   const fetchOrdersData= async()=>{
   let response=await axios.get('api/orders?expand=products')
   
     setOrders(response.data)
+   
   }
 fetchOrdersData()
 
 },[])
+// console.log("Orders from OrderPAge:", orders)
+//  console.log("cartItems from OrderPAge:", cartItems)
+
 
   return (
     <>

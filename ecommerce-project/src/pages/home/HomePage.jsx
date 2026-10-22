@@ -6,7 +6,7 @@ import ProductsGrid from './ProductsGrid';
 
 export function HomePage({cartItems}) {
 const [products,setProducts]= useState([])
-
+// console.log("hello")
   useEffect(()=>{
 const getData= async()=>{
 

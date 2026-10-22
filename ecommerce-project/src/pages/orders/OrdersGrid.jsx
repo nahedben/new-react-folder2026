@@ -1,9 +1,11 @@
 import dayjs from "dayjs"
 import { Fragment } from "react"
 import { priceFormat } from "../../utils/money"
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 
 export default function OrdersGrid({orders}){
+  // console.log("Here all the orders from orderGrid:=>>",orders)
+
   return ( 
 <>
 
@@ -53,11 +55,11 @@ export default function OrdersGrid({orders}){
             </div>
 
             <div className="product-actions">
-              <Link  to="/tracking">
+              <NavLink  to="/tracking/${orderId}/${productId}">
                 <button className="track-package-button button-secondary">
                   Track package
                 </button>
-              </Link  >
+              </NavLink  >
             </div>
             
             </Fragment>)}
