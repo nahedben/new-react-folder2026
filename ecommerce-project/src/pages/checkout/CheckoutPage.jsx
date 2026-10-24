@@ -43,7 +43,7 @@ export function CheckoutPage({ cartItems,loadData }) {
           <OrderSummary deliveryOptions={deliveryOptions} cartItems={cartItems} loadData={loadData} />
 
          
-          <PaymentSummary paymentSummary={paymentSummary}/>
+          <PaymentSummary paymentSummary={paymentSummary} loadData={loadData}/>
             <div>Nothing was added to your order yet.</div>
           
         </div>
