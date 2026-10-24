@@ -1,7 +1,7 @@
 import DeliveryOptions from "./DeliveryOptions"
 import { priceFormat } from "../../utils/money"
 
-export default function CartItemDetails({item, deliveryOptions}){
+export default function CartItemDetails({item, deliveryOptions,loadData}){
   return(
     <>
     <div className="cart-item-details-grid">
@@ -26,7 +26,7 @@ export default function CartItemDetails({item, deliveryOptions}){
                           </div>
                         </div>
       
-                        <DeliveryOptions deliveryOptions={deliveryOptions} item={item}/>
+                        <DeliveryOptions deliveryOptions={deliveryOptions} item={item}  loadData={ loadData}/>
                       </div>
     </>
   )

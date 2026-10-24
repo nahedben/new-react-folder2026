@@ -1,6 +1,6 @@
 import CartItemDetails from "./CartItemDetails"
 import DeliveryDate from "./DeliveryDate"
-export default function OrderSummary({deliveryOptions , cartItems}){
+export default function OrderSummary({deliveryOptions , cartItems,loadData}){
 
 
   return ( <>  <div className="order-summary">
@@ -14,7 +14,7 @@ export default function OrderSummary({deliveryOptions , cartItems}){
                 <div key={item.productId} className="cart-item-container">
                  <DeliveryDate selectedDeliveryOption={selectedDeliveryOption}/>
               
-                  <CartItemDetails item={item} deliveryOptions={deliveryOptions}/>
+                  <CartItemDetails item={item} deliveryOptions={deliveryOptions} loadData={loadData} />
                 </div>
                 )
   })}

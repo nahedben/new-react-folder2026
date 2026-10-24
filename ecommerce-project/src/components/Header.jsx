@@ -2,7 +2,7 @@ import {NavLink} from "react-router-dom";
 import "./Header.css";
 
 export default function  Header({cartItems}) {
-  // console.log(cartItems.cartItems.length)
+  console.log(cartItems.length)
   let quantity = 0
   // console.log("Here is the data:==>",cartItems.cartItems)
   // cartItems.forEach((item) => { quantity +=item.quantity})

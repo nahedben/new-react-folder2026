@@ -7,7 +7,7 @@ import OrderSummary from './OrderSummary.jsx'
 import PaymentSummary from './PaymentSummary.jsx'
 
 
-export function CheckoutPage({ cartItems }) {
+export function CheckoutPage({ cartItems,loadData }) {
   const [deliveryOptions, setDeliveryOptions] = useState([])
   const [paymentSummary, setPaymentSummary] = useState(null)
 // console.log("from checkout", cartItems)
@@ -27,7 +27,7 @@ export function CheckoutPage({ cartItems }) {
 
   fetchCheckoutData()
   fetchPaymentOpData()
-  }, [])
+  }, [cartItems])
 // console.log("from th toplevel",cartItems)
 // cartItems.forEach((item) => {console.log(item)})
   return (
@@ -40,7 +40,7 @@ export function CheckoutPage({ cartItems }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-          <OrderSummary deliveryOptions={deliveryOptions} cartItems={cartItems}/>
+          <OrderSummary deliveryOptions={deliveryOptions} cartItems={cartItems} loadData={loadData} />
 
          
           <PaymentSummary paymentSummary={paymentSummary}/>
